@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wi-Fi | Acceso de invitados</title>
+
+    <style>
+        :root {
+            --rojo: #b51f2b;
+            --rojo-oscuro: #8e1721;
+            --rojo-claro: #fff1f2;
+            --blanco: #ffffff;
+            --gris: #666666;
+            --fondo: #f5f6f8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fondo);
+            color: #252525;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Encabezado */
+
+        header {
+            background: var(--blanco);
+            border-bottom: 4px solid var(--rojo);
+            padding: 22px 20px;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icono {
+            width: 52px;
+            height: 52px;
+            background: var(--rojo);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 21px;
+            color: var(--rojo);
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 13px;
+            color: var(--gris);
+        }
+
+        /* Contenido principal */
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 35px 18px;
+        }
+
+        .tarjeta {
+            width: 100%;
+            max-width: 440px;
+            background: var(--blanco);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .tarjeta-superior {
+            background: var(--rojo);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .wifi-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-superior h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .tarjeta-superior p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        .contenido {
+            padding: 26px;
+        }
+
+        .campo {
+            margin-bottom: 22px;
+        }
+
+        .campo label {
+            display: block;
+            font-size: 12px;
+            color: var(--gris);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .dato {
+            background: var(--fondo);
+            border: 1px solid #e2e2e2;
+            border-radius: 9px;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            word-break: break-word;
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .password-container .dato {
+            flex: 1;
+        }
+
+        button {
+            border: none;
+            border-radius: 9px;
+            background: var(--rojo);
+            color: white;
+            padding: 13px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: var(--rojo-oscuro);
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        .boton-copiar {
+            white-space: nowrap;
+        }
+
+        .instrucciones {
+            background: var(--rojo-claro);
+            border-left: 4px solid var(--rojo);
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .estado {
+            text-align: center;
+            color: #287a43;
+            font-size: 13px;
+            min-height: 18px;
+            margin-top: 12px;
+        }
+
+        /* Pie de página */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gris);
+            font-size: 12px;
+        }
+
+        footer span {
+            color: var(--rojo);
+            font-weight: bold;
+        }
+
+        /* Adaptación a celulares */
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 18px;
+            }
+
+            .contenido {
+                padding: 22px;
+            }
+
+            .password-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .boton-copiar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="icono">W</div>
+
+            <div>
+                <h1>Acceso Wi-Fi</h1>
+                <p>Red de invitados · Acceso a Internet</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="tarjeta">
+
+            <div class="tarjeta-superior">
+                <div class="wifi-icon">⌁</div>
+
+                <h2>Bienvenido</h2>
+
+                <p>
+                    Consultá las credenciales para conectarte
+                    a nuestra red de invitados.
+                </p>
+            </div>
+
+            <div class="contenido">
+
+                <div class="campo">
+                    <label>Nombre de la red (SSID)</label>
+
+                    <div class="dato" id="ssid">
+                        WiFi_Invitados
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Contraseña de acceso</label>
+
+                    <div class="password-container">
+                        <div class="dato" id="password">
+                            PruebaWifi2026
+                        </div>
+
+                        <button
+                            class="boton-copiar"
+                            onclick="copiarPassword()">
+                            Copiar
+                        </button>
+                    </div>
+
+                    <div class="estado" id="estado"></div>
+                </div>
+
+                <div class="instrucciones">
+                    <strong>¿Cómo conectarte?</strong><br>
+
+                    1. Abrí la configuración de Wi-Fi de tu dispositivo.<br>
+                    2. Seleccioná la red indicada arriba.<br>
+                    3. Ingresá la contraseña y comenzá a navegar.
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Red de invitados</span> · Acceso destinado a visitantes
+    </footer>
+
+    <script>
+        function copiarPassword() {
+            const password = document
+                .getElementById("password")
+                .innerText
+                .trim();
+
+            navigator.clipboard.writeText(password)
+                .then(() => {
+                    document.getElementById("estado").innerText =
+                        "Contraseña copiada correctamente.";
+                })
+                .catch(() => {
+                    document.getElementById("estado").innerText =
+                        "No se pudo copiar. Copiala manualmente.";
+                });
+        }
+    </script>
+
+</body>
+</html>
